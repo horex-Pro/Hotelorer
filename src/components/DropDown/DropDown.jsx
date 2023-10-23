@@ -1,6 +1,6 @@
 import React from "react";
 
-function DropDown({ options, setOptions }) {
+function DropDown({ options, setOptions, optionRef }) {
   const handleOption = (name, operation) => {
     setOptions((prev) => {
       return {
@@ -11,10 +11,28 @@ function DropDown({ options, setOptions }) {
   };
 
   return (
-    <div className="absolute top-32 left-0 rounded-[20px] w-[300px] h-[200px] bg-white shadow-xl text-black">
-      <FilterOptions type="adult" minLimit={1} options={options} handleOption={handleOption} />
-      <FilterOptions type="children" minLimit={0} options={options} handleOption={handleOption} />
-      <FilterOptions type="room" minLimit={1} options={options} handleOption={handleOption} />
+    <div
+      className="absolute top-32 left-0 rounded-[20px] w-[300px] h-[200px] bg-white shadow-xl text-black"
+      ref={optionRef}
+    >
+      <FilterOptions
+        type="adult"
+        minLimit={1}
+        options={options}
+        handleOption={handleOption}
+      />
+      <FilterOptions
+        type="children"
+        minLimit={0}
+        options={options}
+        handleOption={handleOption}
+      />
+      <FilterOptions
+        type="room"
+        minLimit={1}
+        options={options}
+        handleOption={handleOption}
+      />
     </div>
   );
 }

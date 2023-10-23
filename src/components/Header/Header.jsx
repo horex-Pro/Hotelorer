@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Navbar from "../Navbar/Navbar";
 import StarIcon from "../icons/StarIcon";
 import Button from "../Button/Button";
@@ -7,6 +7,7 @@ import LocationIcon from "../icons/LocationIcon";
 import CheckIcon from "../icons/CheckIcon";
 import User from "../icons/User";
 import DropDown from "../DropDown/DropDown";
+import useOutsideClick from "../../hooks/useOutsideClick";
 
 const headerBackground = {
   backgroundImage: `url(${HeroImage})`,
@@ -15,11 +16,14 @@ const headerBackground = {
 
 function Header() {
   const [destination, setDestination] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
   const [options, setOptions] = useState({
     adult: 1,
     children: 0,
     room: 1,
   });
+  const optionRef = useRef();
+  useOutsideClick(optionRef, () => setIsOpen(false), "memberFilter");
 
   return (
     <header>
@@ -43,6 +47,9 @@ function Header() {
               setDestination={setDestination}
               options={options}
               setOptions={setOptions}
+              optionRef={optionRef}
+              isOpen={isOpen}
+              setIsOpen={setIsOpen}
             />
           </div>
         </div>
@@ -65,8 +72,7 @@ function QuestionBox() {
   );
 }
 
-function Filters({ destination, setDestination, options, setOptions }) {
-  const [isOpen, setIsOpen] = useState(false);
+function Filters({ destination, setDestination, options, setOptions ,optionRef ,isOpen , setIsOpen }) {
 
   return (
     <div className="filter-box w-[80%] bg-white min-h-[300px] rounded-[25px] mt-2 flex-wrap p-2">
@@ -102,12 +108,17 @@ function Filters({ destination, setDestination, options, setOptions }) {
             <div
               className="bg-none w-full p-2 focus:border-none focus:outline-none text-blue font-light"
               onClick={() => setIsOpen(!isOpen)}
+              id="memberFilter"
             >
               {options.adult} adult - {options.children} children -{" "}
               {options.room} room
             </div>
             {isOpen ? (
-              <DropDown options={options} setOptions={setOptions} />
+              <DropDown
+                options={options}
+                setOptions={setOptions}
+                optionRef={optionRef}
+              />
             ) : null}
           </div>
         </div>
