@@ -8,6 +8,9 @@ import CheckIcon from "../icons/CheckIcon";
 import User from "../icons/User";
 import DropDown from "../DropDown/DropDown";
 import useOutsideClick from "../../hooks/useOutsideClick";
+import "react-date-range/dist/styles.css";
+import "react-date-range/dist/theme/default.css";
+import { DateRange } from "react-date-range";
 
 const headerBackground = {
   backgroundImage: `url(${HeroImage})`,
@@ -17,13 +20,25 @@ const headerBackground = {
 function Header() {
   const [destination, setDestination] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [dateIsOpen, setDateIsOpen] = useState(false);
   const [options, setOptions] = useState({
     adult: 1,
     children: 0,
     room: 1,
   });
+
+  // add a refrence to open/close filter's dropdown
   const optionRef = useRef();
   useOutsideClick(optionRef, () => setIsOpen(false), "memberFilter");
+
+  // date range picker pakage's state
+  const [selectionRange, setSelectionRange] = useState([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: "selection",
+    },
+  ]);
 
   return (
     <header>
@@ -50,6 +65,10 @@ function Header() {
               optionRef={optionRef}
               isOpen={isOpen}
               setIsOpen={setIsOpen}
+              selectionRange={selectionRange}
+              setSelectionRange={setSelectionRange}
+              setDateIsOpen={setDateIsOpen}
+              dateIsOpen={dateIsOpen}
             />
           </div>
         </div>
@@ -72,8 +91,19 @@ function QuestionBox() {
   );
 }
 
-function Filters({ destination, setDestination, options, setOptions ,optionRef ,isOpen , setIsOpen }) {
-
+function Filters({
+  destination,
+  setDestination,
+  options,
+  setOptions,
+  optionRef,
+  isOpen,
+  setIsOpen,
+  selectionRange,
+  setDateIsOpen,
+  setSelectionRange,
+  dateIsOpen,
+}) {
   return (
     <div className="filter-box w-[80%] bg-white min-h-[300px] rounded-[25px] mt-2 flex-wrap p-2">
       <div className="filter flex items-center h-[80%] justify-around flex-wrap">
@@ -94,11 +124,21 @@ function Filters({ destination, setDestination, options, setOptions ,optionRef ,
           <label className="text-black text-[28px]">Check in/out:</label>
           <div className="search-box w-[290px] h-[60px] rounded-[18px] shadow-xl flex items-center p-3">
             <CheckIcon />
-            <input
-              type="text"
-              value="08/30/2023 to 08/30/2023"
-              className="bg-none w-full p-2 focus:border-none focus:outline-none text-blue font-light"
-            />
+            <div
+              className="bg-none w-full p-2 focus:border-none focus:outline-none text-blue font-light relative"
+              onClick={() => setDateIsOpen(!dateIsOpen)}
+            >
+              08/30/2023 to 08/30/2023
+              {dateIsOpen ? (
+                <DateRange
+                  ranges={[selectionRange]}
+                  onChange={(ranges) => setSelectionRange(ranges)}
+                  minDate={new Date()}
+                  className=" absolute  top-14  left-[-25%] z-10"
+                  moveRangeOnFirstSelection={true}
+                />
+              ) : null}
+            </div>
           </div>
         </div>
         <div className="option w-[300px] h-[125px] flex flex-col justify-around text-left relative">
