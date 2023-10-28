@@ -121,29 +121,31 @@ function Filters({
             />
           </div>
         </div>
-        <div className="option w-[300px] h-[125px] flex flex-col justify-around text-left">
+        <div className="option w-[300px] h-[125px] flex flex-col justify-around text-left relative">
           <label className="text-black text-[28px]">Check in/out:</label>
           <div className="search-box w-[290px] h-[60px] rounded-[18px] shadow-xl flex items-center p-3">
             <CheckIcon />
             <div
-              className="bg-none w-full p-2 focus:border-none focus:outline-none text-blue font-light relative"
+              className="bg-none w-full p-2 focus:border-none focus:outline-none text-blue font-light"
               onClick={(e) => {
                 e.stopPropagation();
                 setDateIsOpen(!dateIsOpen);
               }}
             >
-              {`${format(date[0].startDate,'mm/dd/yyyy')} to ${format(date[0].endDate,'mm/dd/yyyy')}`}
-              {dateIsOpen ? (
-                <DateRange
-                  ranges={date}
-                  onChange={item => setDate([item.selection])}
-                  minDate={new Date()}
-                  className="absolute top-14 left-[-25%] z-10"
-                  moveRangeOnFirstSelection={true}
-                />
-              ) : null}
+              {`${format(date[0].startDate, "mm/dd/yyyy")} to ${format(
+                date[0].endDate,
+                "mm/dd/yyyy"
+              )}`}
             </div>
           </div>
+          {dateIsOpen ? (
+            <DateRange
+              ranges={date}
+              onChange={(item) => setDate([item.selection])}
+              minDate={new Date()}
+              className="z-10 absolute top-32"
+            />
+          ) : null}
         </div>
         <div className="option w-[300px] h-[125px] flex flex-col justify-around text-left relative">
           <label className="text-black text-[28px]">Members:</label>
