@@ -11,6 +11,7 @@ import useOutsideClick from "../../hooks/useOutsideClick";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { DateRange } from "react-date-range";
+import { format } from "date-fns";
 
 const headerBackground = {
   backgroundImage: `url(${HeroImage})`,
@@ -32,7 +33,7 @@ function Header() {
   useOutsideClick(optionRef, () => setIsOpen(false), "memberFilter");
 
   // date range picker pakage's state
-  const [selectionRange, setSelectionRange] = useState([
+  const [date, setDate] = useState([
     {
       startDate: new Date(),
       endDate: new Date(),
@@ -65,8 +66,8 @@ function Header() {
               optionRef={optionRef}
               isOpen={isOpen}
               setIsOpen={setIsOpen}
-              selectionRange={selectionRange}
-              setSelectionRange={setSelectionRange}
+              date={date}
+              setDate={setDate}
               setDateIsOpen={setDateIsOpen}
               dateIsOpen={dateIsOpen}
             />
@@ -99,9 +100,9 @@ function Filters({
   optionRef,
   isOpen,
   setIsOpen,
-  selectionRange,
+  date,
+  setDate,
   setDateIsOpen,
-  setSelectionRange,
   dateIsOpen,
 }) {
   return (
@@ -126,15 +127,18 @@ function Filters({
             <CheckIcon />
             <div
               className="bg-none w-full p-2 focus:border-none focus:outline-none text-blue font-light relative"
-              onClick={() => setDateIsOpen(!dateIsOpen)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setDateIsOpen(!dateIsOpen);
+              }}
             >
-              08/30/2023 to 08/30/2023
+              {`${format(date[0].startDate,'mm/dd/yyyy')} to ${format(date[0].endDate,'mm/dd/yyyy')}`}
               {dateIsOpen ? (
                 <DateRange
-                  ranges={[selectionRange]}
-                  onChange={(ranges) => setSelectionRange(ranges)}
+                  ranges={date}
+                  onChange={item => setDate([item.selection])}
                   minDate={new Date()}
-                  className=" absolute  top-14  left-[-25%] z-10"
+                  className="absolute top-14 left-[-25%] z-10"
                   moveRangeOnFirstSelection={true}
                 />
               ) : null}
