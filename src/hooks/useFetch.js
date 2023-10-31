@@ -3,27 +3,29 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 export default function useFetch(url, query = "") {
-  const [data, setData] = useState();
+  const [data, setData] = useState(null); // Set an initial value of null
+
   const [loading, setLoading] = useState(false);
 
-  useEffect(()=>{
-    async function getData(){
-        try {
-            setLoading(true);
+  useEffect(() => {
+    async function getData() {
+      try {
+        setLoading(true);
 
-            const data = await axios.get(`${url}?${query}`);
+        const response = await axios.get(`${url}?${query}`);
+        const responseData = response.data; // Access the actual data from the response
 
-            setData(data);
-        } catch (error) {
-            setData([]);
-            toast.error(error?.message);
-        }finally{
-            setLoading(false);
-        }
+        setData(responseData);
+      } catch (error) {
+        setData([]); // Provide an appropriate default value
+        toast.error(error?.message);
+      } finally {
+        setLoading(false);
+      }
     }
 
-    getData()
-  },[url,query]);
+    getData();
+  }, [url, query]);
 
-  return{loading,data}
+  return { loading, data };
 }

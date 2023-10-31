@@ -1,1 +1,31 @@
 @import url(./index.css);
+
+.animated-button {
+  position: relative;
+  display: inline-block;
+  color: white;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.button-text {
+  position: relative;
+  z-index: 2;
+}
+
+.button-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  transform-origin: 100% 0;
+  transition: height 0.3s ease-in-out;
+}
+
+.animated-button:hover .button-overlay {
+  height: 100%;
+}
+

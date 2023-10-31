@@ -15,6 +15,7 @@ function Button({ text, bgColor, color, border, font }) {
               items-center
               justify-center
               h-[30px]
+              animated-button
               `}
     >
       {text}

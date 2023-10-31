@@ -12,6 +12,7 @@ import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { DateRange } from "react-date-range";
 import { format } from "date-fns";
+import SearchIcon from "../icons/SearchIcon";
 
 const headerBackground = {
   backgroundImage: `url(${HeroImage})`,
@@ -168,6 +169,10 @@ function Filters({
             ) : null}
           </div>
         </div>
+        <button class="animated-button bg-blue w-[60px] h-[60px] rounded-[18px] flex items-center justify-center">
+          <SearchIcon />
+          <span class="button-overlay"></span>
+        </button>
       </div>
     </div>
   );
