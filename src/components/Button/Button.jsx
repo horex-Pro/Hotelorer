@@ -1,9 +1,9 @@
 import React from "react";
 
-function Button({ text, bgColor, color, border, font }) {
+function Button({ text, bgColor, color, border, font, path }) {
   return (
     <a
-      href="#"
+      href={path}
       className={`bg-${bgColor}
               text-${color}
               text-[14px]

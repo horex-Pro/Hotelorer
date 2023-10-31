@@ -1,15 +1,14 @@
-import LocationsList from "../LocationsList/LocationsList"
+import LocationsList from "../LocationsList/LocationsList";
 
 function NearbyLocations() {
-    
   return (
-    <div className='p-[20px]'>
+    <div className="p-[20px]">
       <h2 className=" text-[40px] font-medium">
-        <span className='text-blue'>Nearby </span>locations:
+        <span className="text-blue">Nearby </span>locations:
       </h2>
-      <LocationsList/>
+      <LocationsList />
     </div>
   );
 }
 
-export default NearbyLocations
+export default NearbyLocations;

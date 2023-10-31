@@ -5,10 +5,10 @@ import Button from "../Button/Button";
 function LocationsList() {
   const { loading, data } = useFetch("http://localhost:5000/hotels", "");
   return (
-    <div className="flex pt-10 flex-wrap gap-8">
+    <div className="flex pt-10 flex-wrap gap-14">
       {data ? (
         data.map((item) => (
-          <div className="card w-[440px] flex flex-col justify-between h-[436px]">
+          <div className="card w-[420px] flex flex-col justify-between h-[436px]">
             <img
               className="w-full h-[290px] rounded-[20px]"
               src={item.picture_url.url}
