@@ -1,5 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
@@ -9,12 +10,21 @@ function Comments() {
   const { loading, data } = useFetch("http://localhost:5000/comments", "");
 
   return (
-    <div className="commenst-container p-[20px]">
-      <Swiper slidesPerView={3}>
+    <div className="commenst-container p-[20px] flex flex-wrap">
+      <Swiper
+        slidesPerView={3}
+        spaceBetween={30}
+        centeredSlides={false}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
         {data ? (
           data.map((item) => (
             <SwiperSlide key={item.id}>
-              <div className="comment w-[400px] h-[440px] rounded-[20px] border border-blue p-10 pt-28 flex flex-col justify-between">
+              <div className="comment max-w-[400px] h-[440px] rounded-[20px] border border-blue p-10 pt-28 flex flex-col justify-between">
                 <p className="body text-[30px] font-light text-justify">
                   {item.body}
                 </p>

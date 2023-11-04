@@ -3,6 +3,7 @@ import "../src/App.css";
 import Header from "./components/Header/Header";
 import NearbyLocations from "./components/NearbyLocations/NearbyLocations";
 import Comments from "./components/Comments/Comments";
+import JobOffer from "./components/JobOffer/JobOffer";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <NearbyLocations />
       <Comments/>
+      <JobOffer/>
     </div>
   );
 }
