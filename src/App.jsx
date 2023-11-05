@@ -12,9 +12,9 @@ function App() {
       <Toaster />
       <Header />
       <NearbyLocations />
-      <Comments/>
-      <JobOffer/>
-      <Footer/>
+      <Comments />
+      <JobOffer />
+      <Footer />
     </div>
   );
 }
