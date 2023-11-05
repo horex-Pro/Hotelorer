@@ -8,7 +8,7 @@ export default {
       },
       colors: {
         blue: "#118DD3",
-        black: "#525252",
+        black: "#262626",
       },
       fontFamily: {
         Roboto: ["Roboto", "sans-serif"],

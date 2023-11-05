@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import NearbyLocations from "./components/NearbyLocations/NearbyLocations";
 import Comments from "./components/Comments/Comments";
 import JobOffer from "./components/JobOffer/JobOffer";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <NearbyLocations />
       <Comments/>
       <JobOffer/>
+      <Footer/>
     </div>
   );
 }
