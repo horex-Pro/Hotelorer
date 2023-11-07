@@ -13,6 +13,7 @@ import "react-date-range/dist/theme/default.css";
 import { DateRange } from "react-date-range";
 import { format } from "date-fns";
 import SearchIcon from "../icons/SearchIcon";
+import { createSearchParams, json, useNavigate, useParams, useSearchParams } from "react-router-dom";
 
 const headerBackground = {
   backgroundImage: `url(${HeroImage})`,
@@ -41,6 +42,24 @@ function Header() {
       key: "selection",
     },
   ]);
+
+  const [searchParams,setSearchParams] = useSearchParams();
+  const navigate = useNavigate()
+
+  const handleSearch = ()=>{
+
+   const encodedParams = createSearchParams({
+      date: JSON.stringify(date),
+      destination,
+      options:JSON.stringify(options)
+    });
+
+    setSearchParams(encodedParams)
+    navigate({
+      pathname:"/hotels",
+      search:encodedParams.toString()
+    })
+  }
 
   return (
     <header>
@@ -71,6 +90,7 @@ function Header() {
               setDate={setDate}
               setDateIsOpen={setDateIsOpen}
               dateIsOpen={dateIsOpen}
+              handleSearch={handleSearch}
             />
           </div>
         </div>
@@ -105,9 +125,10 @@ function Filters({
   setDate,
   setDateIsOpen,
   dateIsOpen,
+  handleSearch,
 }) {
   return (
-    <div className="filter-box w-[80%] bg-white min-h-[300px] rounded-[25px] mt-2 flex-wrap p-2">
+    <div className="filter-box w-[80%] bg-white min-h-[300px] rounded-[25px] mt-2 flex-wrap p-2 sticky top-2">
       <div className="filter flex items-center h-[80%] justify-around flex-wrap">
         <div className="option w-[300px] h-[125px] flex flex-col justify-around text-left">
           <label className="text-black text-[28px]">Locations:</label>
@@ -169,7 +190,10 @@ function Filters({
             ) : null}
           </div>
         </div>
-        <button class="animated-button bg-blue w-[60px] h-[60px] rounded-[18px] flex items-center justify-center">
+        <button
+          class="animated-button bg-blue w-[60px] h-[60px] rounded-[18px] flex items-center justify-center"
+          onClick={handleSearch}
+        >
           <SearchIcon />
           <span class="button-overlay"></span>
         </button>
