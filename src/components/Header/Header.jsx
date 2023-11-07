@@ -13,7 +13,13 @@ import "react-date-range/dist/theme/default.css";
 import { DateRange } from "react-date-range";
 import { format } from "date-fns";
 import SearchIcon from "../icons/SearchIcon";
-import { createSearchParams, json, useNavigate, useParams, useSearchParams } from "react-router-dom";
+import {
+  createSearchParams,
+  json,
+  useNavigate,
+  useParams,
+  useSearchParams,
+} from "react-router-dom";
 
 const headerBackground = {
   backgroundImage: `url(${HeroImage})`,
@@ -43,23 +49,22 @@ function Header() {
     },
   ]);
 
-  const [searchParams,setSearchParams] = useSearchParams();
-  const navigate = useNavigate()
+  const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
 
-  const handleSearch = ()=>{
-
-   const encodedParams = createSearchParams({
+  const handleSearch = () => {
+    const encodedParams = createSearchParams({
       date: JSON.stringify(date),
       destination,
-      options:JSON.stringify(options)
+      options: JSON.stringify(options),
     });
 
-    setSearchParams(encodedParams)
+    setSearchParams(encodedParams);
     navigate({
-      pathname:"/hotels",
-      search:encodedParams.toString()
-    })
-  }
+      pathname: "/hotels",
+      search: encodedParams.toString(),
+    });
+  };
 
   return (
     <header>
