@@ -11,6 +11,9 @@ function Comments() {
 
   return (
     <div className="commenst-container p-[20px] flex flex-wrap">
+      <h2 className=" text-[40px] font-medium">
+        What you say about<span className="text-blue"> Hotelorer:</span>
+      </h2>
       <Swiper
         slidesPerView={3}
         spaceBetween={30}
@@ -19,7 +22,7 @@ function Comments() {
           clickable: true,
         }}
         modules={[Pagination]}
-        className="mySwiper"
+        className="mySwiper mt-4"
       >
         {data ? (
           data.map((item) => (
