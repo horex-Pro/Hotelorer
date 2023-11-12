@@ -15,9 +15,8 @@ import { format } from "date-fns";
 import SearchIcon from "../icons/SearchIcon";
 import {
   createSearchParams,
-  json,
+
   useNavigate,
-  useParams,
   useSearchParams,
 } from "react-router-dom";
 
@@ -133,7 +132,7 @@ function Filters({
   handleSearch,
 }) {
   return (
-    <div className="filter-box w-[80%] bg-white min-h-[300px] rounded-[25px] mt-2 flex-wrap p-2 sticky top-2">
+    <div className="filter-box w-[80%] bg-white min-h-[300px] rounded-[25px] mt-2 flex-wrap p-2">
       <div className="filter flex items-center h-[80%] justify-around flex-wrap">
         <div className="option w-[300px] h-[125px] flex flex-col justify-around text-left">
           <label className="text-black text-[28px]">Locations:</label>

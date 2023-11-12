@@ -2,7 +2,7 @@ import React from "react";
 import useFetch from "../../hooks/useFetch";
 import Button from "../Button/Button";
 
-function LocationsList() {
+function LocationsList(link) {
   const { loading, data } = useFetch("http://localhost:5000/hotels", "");
   return (
     <div className="flex pt-10 flex-wrap gap-14">

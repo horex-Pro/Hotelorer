@@ -6,7 +6,7 @@ function NearbyLocations() {
       <h2 className=" text-[40px] font-medium">
         <span className="text-blue">Nearby </span>locations:
       </h2>
-      <LocationsList />
+      <LocationsList link="https://localhost:5000/hotels" />
     </div>
   );
 }
