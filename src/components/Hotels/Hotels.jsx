@@ -1,17 +1,9 @@
 import React from "react";
-import { Link, useSearchParams } from "react-router-dom";
-import useFetch from "../../hooks/useFetch";
+import { Link } from "react-router-dom";
+import { useHotels } from "../../context/HotelsProvider";
 
 export default function Hotels() {
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  const destionation = searchParams.get("destination");
-  const room = JSON.parse(searchParams.get("options"))?.room;
-
-  const { isLoading, data } = useFetch(
-    "http://localhost:5000/hotels",
-    `q=${destionation || ""}&accommodates_gte=${room || 1}`
-  );
+  const { isLoading, data } = useHotels();
 
   window.scroll({
     top: 900,
@@ -20,7 +12,7 @@ export default function Hotels() {
   });
 
   return (
-    <div className=" h-screen overflow-scroll overflow-x-hidden">
+    <div className="h-screen overflow-scroll overflow-x-hidden">
       {data ? (
         data.map((item) => (
           <Link

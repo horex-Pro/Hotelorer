@@ -26,7 +26,7 @@ export default function useFetch(url, query = "") {
 
     getData();
   }, [url, query]);
-  console.log(query)
+  console.log(query);
 
   return { loading, data };
 }

@@ -4,20 +4,20 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "./components/HomePage/HomePage";
 import HotelsLayout from "./components/HotelsLayout/HotelsLayout";
 import Hotels from "./components/Hotels/Hotels";
-
+import HotelsProvider from "./context/HotelsProvider";
 
 function App() {
   return (
-    <div className="app font-Roboto">
+    <HotelsProvider>
       <Toaster />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/hotels" element={<HotelsLayout />}>
-          <Route index element={<Hotels/>}/>
+          <Route index element={<Hotels />} />
           <Route path=":id" element={<div>single hotel</div>} />
         </Route>
       </Routes>
-    </div>
+    </HotelsProvider>
   );
 }
 
