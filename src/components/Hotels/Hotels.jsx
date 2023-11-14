@@ -18,6 +18,7 @@ export default function Hotels() {
           <Link
             to={`/hotels/${item.id}?lat=${item.latitude}&lng=${item.longitude}`}
             className="w-[95%] min-h-[150px] rounded-3xl flex gap-4 items-center p-5 mt-2 bg-slate-50"
+            key={item.id}
           >
             <img
               className="h-[100px] rounded-3xl w-1/4"

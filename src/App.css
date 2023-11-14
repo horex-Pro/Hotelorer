@@ -1,5 +1,5 @@
 @import url(./index.css);
-
+@import url("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
 .animated-button {
   position: relative;
   display: inline-block;
@@ -26,5 +26,14 @@
 }
 
 .animated-button:hover .button-overlay {
+  height: 100%;
+}
+
+.mapContainer {
+  flex: 1;
+  position: relative;
+}
+
+.map {
   height: 100%;
 }
