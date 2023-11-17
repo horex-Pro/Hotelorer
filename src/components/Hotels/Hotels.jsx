@@ -26,7 +26,7 @@ export default function Hotels() {
               alt=""
             />
             <div className="description h-full flex flex-col justify-between w-3/4">
-              <h4 className=" font-bold text-xl">{item.name}</h4>
+              <h4 className=" font-bold text-xl">{item.host_location}</h4>
               <p className="w-[95%] text-justify font-thin">{item.summary}</p>
               <div className="price text-blue">
                 $<span className="font-black">{item.price}</span>/night
