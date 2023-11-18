@@ -3,11 +3,24 @@ import { MapContainer, TileLayer, useMap, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useHotels } from "../../context/HotelsProvider";
 import { useSearchParams } from "react-router-dom";
+import useLocation from "../../hooks/useGeoLocations";
 
 function Map() {
   const [position, setPosition] = useState([20, 20]);
   const { isLoading, data } = useHotels();
   const [searchParams, setSearchParams] = useSearchParams();
+
+  const {
+    isLoading: isLoadingLocations,
+    userLocation,
+    getLocations,
+  } = useLocation();
+
+  useEffect(() => {
+    if (userLocation?.lat && userLocation?.lng) {
+      setPosition([userLocation.lat, userLocation.lng]);
+    }
+  }, []);
 
   const lat = searchParams.get("lat");
   const lng = searchParams.get("lng");
@@ -18,8 +31,11 @@ function Map() {
 
   return (
     <div className="map w-1/2 h-screen bg-black relative z-0" id="map">
-      <button className=" absolute w-[150px] h-[40px] bg-blue text-white rounded-full z-50 left-5 bottom-5">
-        Use Your Location
+      <button
+        onClick={getLocations}
+        className=" absolute w-[150px] h-[40px] bg-blue text-white rounded-full z-50 left-5 bottom-28"
+      >
+        {isLoadingLocations ? "Loading..." : "Use Your Location"}
       </button>
       <MapContainer
         className="map z-0"

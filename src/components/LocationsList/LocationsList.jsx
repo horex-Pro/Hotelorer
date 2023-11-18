@@ -1,6 +1,7 @@
 import React from "react";
 import useFetch from "../../hooks/useFetch";
 import Button from "../Button/Button";
+import { Link } from "react-router-dom";
 
 function LocationsList(link) {
   const { loading, data } = useFetch("http://localhost:5000/hotels", "");
@@ -8,7 +9,10 @@ function LocationsList(link) {
     <div className="flex pt-10 flex-wrap gap-14">
       {data ? (
         data.map((item) => (
-          <div className="card w-[420px] flex flex-col justify-between h-[436px]">
+          <Link
+            to={`/hotels/${item.id}?lat=${item.latitude}&lng=${item.longitude}`}
+            className="card w-[420px] flex flex-col justify-between h-[436px]"
+          >
             <img
               className="w-full h-[290px] rounded-[20px]"
               src={item.picture_url.url}
@@ -25,7 +29,7 @@ function LocationsList(link) {
               </div>
               <Button text="View" bgColor="blue" color="white" />
             </div>
-          </div>
+          </Link>
         ))
       ) : (
         <p>loading ...</p>
