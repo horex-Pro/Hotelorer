@@ -3,8 +3,11 @@ import Header from "../Header/Header";
 import { Outlet } from "react-router-dom";
 import Map from "../Map/Map";
 import Footer from "../Footer/Footer";
+import { useHotels } from "../../context/HotelsProvider";
 
 function HotelsLayout() {
+  const {isLoading,data} = useHotels();
+  if(isLoading) return <p>loading...</p>
   return (
     <div>
       <Header />
@@ -15,9 +18,9 @@ function HotelsLayout() {
         <div className="hotels-container w-1/2">
           <Outlet />
         </div>
-        <Map/>
+        {data ? <Map markerLocations={data}/> : null}
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

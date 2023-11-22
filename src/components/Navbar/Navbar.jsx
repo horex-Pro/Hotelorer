@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../Button/Button";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -7,19 +8,16 @@ function Navbar() {
       <nav>
         <ul className="flex justify-between">
           <li className="logo w-[10%] text-[20px]">Hotelorer</li>
-          <li className="text-black font-light w-[40%] ">
+          <li className="text-black font-light w-[30%] ">
             <ul className="flex justify-between">
               <li>
-                <a href="#">Make Reservation</a>
+                <Link to="/hotels">Make Reservation</Link>
               </li>
               <li>
-                <a href="#">About Us</a>
+                <Link to="#">About Us</Link>
               </li>
               <li>
-                <a href="#">Activity</a>
-              </li>
-              <li>
-                <a href="#">Coupons and Promos</a>
+                <Link to="/bookmarks">Bookmarks</Link>
               </li>
             </ul>
           </li>
