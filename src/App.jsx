@@ -6,8 +6,9 @@ import HotelsLayout from "./components/HotelsLayout/HotelsLayout";
 import Hotels from "./components/Hotels/Hotels";
 import HotelsProvider from "./context/HotelsProvider";
 import SingleHotelData from "./components/singleHotelData/singleHotelData";
-import BookmarkLayout from "./components/Bookmark/BookmarkLayout";
+import BookmarkLayout from "./components/BookmarkLayout/BookmarkLayout"
 import BookmarksProvider from "./context/BookmarksListProvider";
+import Bookmark from "./components/Bookmark/Bookmark";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
             <Route path=":id" element={<SingleHotelData />} />
           </Route>
           <Route path="/bookmarks" element={<BookmarkLayout />}>
-            <Route index element={<div>bookmark list</div>} />
+            <Route index element={<Bookmark/>} />
             <Route path="add" element={<div>add new boomark</div>} />
           </Route>
         </Routes>
