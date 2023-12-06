@@ -13,7 +13,7 @@ function BookmarkLayout() {
         Your<span className="text-blue"> Bookmarks </span>locations: {}
       </h2>
       <div className="layout p-[20px] flex flex-wrap">
-        <div className="hotels-container w-1/2">
+        <div className="bookmarks-container w-1/2">
           <Outlet />
         </div>
         {bookmarks ? <Map markerLocations={bookmarks} /> : null}

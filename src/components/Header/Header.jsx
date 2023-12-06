@@ -15,7 +15,6 @@ import { format } from "date-fns";
 import SearchIcon from "../icons/SearchIcon";
 import {
   createSearchParams,
-
   useNavigate,
   useSearchParams,
 } from "react-router-dom";
