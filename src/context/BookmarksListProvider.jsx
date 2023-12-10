@@ -1,5 +1,4 @@
 import React, { createContext, useContext } from "react";
-import { useSearchParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 
 const BookmarksContext = createContext();
