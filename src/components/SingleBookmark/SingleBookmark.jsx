@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useBookmarks } from "../../context/BookmarksListProvider";
 import ReactCountryFlag from "react-country-flag";
 
 function SingleBookmark() {
+  const navigate = useNavigate();
   const { id } = useParams();
   const [currentBookmark, setCurrentBookmark] = useState();
   const { isLoading, bookmarks } = useBookmarks();
@@ -17,8 +18,19 @@ function SingleBookmark() {
 
   currentBookmark ? console.log(currentBookmark) : null;
 
+  const handleBack = () => {
+    navigate(-1);
+  };
+
   return (
     <div className="w-full p-2 pt-0">
+      <button
+        className=" bg-blue w-[70px] mb-3 text-white rounded p-[5px]"
+        onClick={handleBack}
+      >
+        {" "}
+        &larr; back
+      </button>
       {currentBookmark ? (
         <div className="flex items-center flex-wrap">
           <p className=" text-[30px]">{currentBookmark.cityName} in &nbsp;</p>

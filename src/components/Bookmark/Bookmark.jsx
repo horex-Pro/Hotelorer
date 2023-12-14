@@ -24,7 +24,6 @@ function Bookmark() {
                 </div>
               </Link>
             );
-            
           })}
         </div>
       </div>
