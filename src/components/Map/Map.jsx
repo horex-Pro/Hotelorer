@@ -8,13 +8,14 @@ import {
   useMapEvent,
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import { useHotels } from "../../context/HotelsProvider";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import useLocation from "../../hooks/useGeoLocations";
+import useUrlLocation from "../../hooks/useUrlLocation";
 
 function Map({ markerLocations }) {
   const [position, setPosition] = useState([18, 11]);
-  const [searchParams, setSearchParams] = useSearchParams();
+
+  const [lat, lng] = useUrlLocation();
 
   const {
     isLoading: isLoadingLocations,
@@ -27,9 +28,6 @@ function Map({ markerLocations }) {
       setPosition([userLocation.lat, userLocation.lng]);
     }
   }, []);
-
-  const lat = searchParams.get("lat");
-  const lng = searchParams.get("lng");
 
   useEffect(() => {
     if (lat && lng) setPosition([lat, lng]);
