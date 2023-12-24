@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import useUrlLocation from "../../hooks/useUrlLocation";
 import axios from "axios";
 import toast from "react-hot-toast";
+import ReactCountryFlag from "react-country-flag";
 
 function AddNewBookmark() {
   const navigate = useNavigate();
@@ -16,6 +17,8 @@ function AddNewBookmark() {
     useState(true);
 
   useEffect(() => {
+    if (!lat || !lng) return;
+
     async function fetchLocationData() {
       setIsLoadingGeoLocationCoding(true);
       try {
@@ -37,7 +40,10 @@ function AddNewBookmark() {
 
   if (isLoadingGeoLocationCoding) return <p>loading...</p>;
 
-  if (!cityName || !countryName) return toast.error("invalid location");
+  if (!cityName || !countryName) {
+    toast.error("invalid location");
+    return <p>Please select another location.</p>;
+  }
 
   return (
     <div className="p-2">
@@ -57,13 +63,20 @@ function AddNewBookmark() {
           <label htmlFor="country" className="font-medium mt-5 text-[20px]">
             country name:
           </label>
-          <input
-            type="text"
-            id="country"
-            onChange={(e) => setCountryName(e.target.value)}
-            value={countryName}
-            className="mt-2 p-2 h-12 border border-blue rounded shadow-sm"
-          />
+          <div className="flex items-center h-16 p-2 justify-between border border-blue rounded shadow-sm">
+            <input
+              type="text"
+              id="country"
+              onChange={(e) => setCountryName(e.target.value)}
+              value={countryName}
+              className="mt-2 p-2 w-5/6 focus:border-none focus:outline-none"
+            />
+            <ReactCountryFlag
+              svg
+              countryCode={countryCode}
+              className=" h-full scale-150"
+            />
+          </div>
         </div>
         <div className="buttons mt-2 flex w-full justify-between">
           <button
