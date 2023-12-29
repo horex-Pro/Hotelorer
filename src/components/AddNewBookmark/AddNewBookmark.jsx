@@ -4,6 +4,7 @@ import useUrlLocation from "../../hooks/useUrlLocation";
 import axios from "axios";
 import toast from "react-hot-toast";
 import ReactCountryFlag from "react-country-flag";
+import { useBookmarks } from "../../context/BookmarksListProvider";
 
 function AddNewBookmark() {
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ function AddNewBookmark() {
   const [cityName, setCityName] = useState("");
   const [countryName, setCountryName] = useState("");
   const [countryCode, setCountryCode] = useState("");
+  const { createBookmark } = useBookmarks();
 
   const [isLoadingGeoLocationCoding, setIsLoadingGeoLocationCoding] =
     useState(true);
@@ -45,10 +47,28 @@ function AddNewBookmark() {
     return <p>Please select another location.</p>;
   }
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!countryName || !cityName) return;
+
+    const newBookmark = {
+      cityName,
+      country: countryName,
+      countryCode,
+      latitude: lat,
+      longitude: lng,
+      host_location: cityName + " " + countryName,
+    };
+
+    await createBookmark(newBookmark);
+
+    navigate("/bookmarks");
+  };
+
   return (
     <div className="p-2">
       <h2>Add your new bookmark locations:</h2>
-      <form action="">
+      <form action="" onSubmit={handleSubmit}>
         <div className="form-control mt-2 flex flex-col">
           <label htmlFor="cityName" className="font-medium text-[20px]">
             city name:
