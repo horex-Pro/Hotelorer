@@ -10,7 +10,7 @@ function BookmarksProvider({ children }) {
     "http://localhost:5000/bookmarks"
   );
 
-  const { bookmarksList, setBookmarksList } = useState([]);
+  const [bookmarksList, setBookmarksList] = useState([]);
 
   useEffect(() => {
     async function fetchBookmarksList() {
@@ -22,6 +22,8 @@ function BookmarksProvider({ children }) {
         toast.error(error.message);
       }
     }
+
+    fetchBookmarksList();
   }, []);
 
   async function createBookmark(newBookmark) {
@@ -36,9 +38,22 @@ function BookmarksProvider({ children }) {
       toast.error(error.message);
     }
   }
+  async function deleteBookmark(id) {
+    try {
+      const { data } = await axios.delete(
+        `http://localhost:5000/bookmarks/${id}`
+      );
+
+      setBookmarksList(bookmarksList.filter((item) => item.id !== id));
+    } catch (error) {
+      toast.error(error.message);
+    }
+  }
 
   return (
-    <BookmarksContext.Provider value={{ isLoading, bookmarks, createBookmark }}>
+    <BookmarksContext.Provider
+      value={{ isLoading, bookmarks, createBookmark, deleteBookmark }}
+    >
       {children}
     </BookmarksContext.Provider>
   );

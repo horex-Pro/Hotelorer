@@ -1325,76 +1325,22 @@
   ],
   "bookmarks": [
     {
-      "cityName": "Abalessa",
-      "country": "Algeria",
-      "countryCode": "DZ",
-      "latitude": "23.18455079512732",
-      "longitude": "3.795523257510883",
-      "host_location": "Abalessa Algeria",
-      "id": 1
+      "cityName": "Pinarbasi",
+      "country": "Turkiye",
+      "countryCode": "TR",
+      "latitude": "38.89103282648846",
+      "longitude": "36.29527442463898",
+      "host_location": "Pinarbasi Turkiye",
+      "id": 6
     },
     {
-      "cityName": "Mahidasht",
-      "country": "Iran (Islamic Republic of)",
-      "countryCode": "IR",
-      "latitude": "34.32869425037187",
-      "longitude": "46.724183117022086",
-      "host_location": "Mahidasht Iran (Islamic Republic of)",
-      "id": 4
-    },
-    {
-      "cityName": "Sanandaj",
-      "country": "Iran (Islamic Republic of)",
-      "countryCode": "IR",
-      "latitude": "35.31372444726279",
-      "longitude": "47.03114358752335",
-      "host_location": "Sanandaj Iran (Islamic Republic of)",
-      "id": 5
-    },
-    {
-      "cityName": "A Dakhla Oasis",
-      "country": "Egypt",
-      "countryCode": "EG",
-      "latitude": "25.02090651422749",
-      "longitude": "29.09059588509316",
-      "host_location": "A Dakhla Oasis Egypt",
+      "cityName": "Kandahar",
+      "country": "Afghanistan",
+      "countryCode": "AF",
+      "latitude": "31.573855555238104",
+      "longitude": "65.76359695820173",
+      "host_location": "Kandahar Afghanistan",
       "id": 7
-    },
-    {
-      "cityName": "Baba Kot",
-      "country": "Pakistan",
-      "countryCode": "PK",
-      "latitude": "28.43528783183169",
-      "longitude": "67.78003711374224",
-      "host_location": "Baba Kot Pakistan",
-      "id": 8
-    },
-    {
-      "cityName": "Maroua",
-      "country": "Cameroon",
-      "countryCode": "CM",
-      "latitude": "10.790140750321738",
-      "longitude": "14.541265935243686",
-      "host_location": "Maroua Cameroon",
-      "id": 9
-    },
-    {
-      "cityName": "Chahar Dangeh",
-      "country": "Iran (Islamic Republic of)",
-      "countryCode": "IR",
-      "latitude": "35.60371874069731",
-      "longitude": "51.32675170898438",
-      "host_location": "Chahar Dangeh Iran (Islamic Republic of)",
-      "id": 10
-    },
-    {
-      "cityName": "Bilma",
-      "country": "Niger (the)",
-      "countryCode": "NE",
-      "latitude": "19.425153718960143",
-      "longitude": "12.0849609375",
-      "host_location": "Bilma Niger (the)",
-      "id": 11
     }
   ],
   "comments": [
