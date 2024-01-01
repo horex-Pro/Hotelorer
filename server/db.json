@@ -1325,22 +1325,13 @@
   ],
   "bookmarks": [
     {
-      "cityName": "Pinarbasi",
-      "country": "Turkiye",
-      "countryCode": "TR",
-      "latitude": "38.89103282648846",
-      "longitude": "36.29527442463898",
-      "host_location": "Pinarbasi Turkiye",
-      "id": 6
-    },
-    {
-      "cityName": "Kandahar",
-      "country": "Afghanistan",
-      "countryCode": "AF",
-      "latitude": "31.573855555238104",
-      "longitude": "65.76359695820173",
-      "host_location": "Kandahar Afghanistan",
-      "id": 7
+      "cityName": "Arlit",
+      "country": "Niger (the)",
+      "countryCode": "NE",
+      "latitude": "18.01432440371545",
+      "longitude": "10.962178281928654",
+      "host_location": "Arlit Niger (the)",
+      "id": 1
     }
   ],
   "comments": [
