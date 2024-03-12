@@ -4,64 +4,68 @@ import useUrlLocation from "../../hooks/useUrlLocation";
 import axios from "axios";
 import toast from "react-hot-toast";
 import ReactCountryFlag from "react-country-flag";
-import { useBookmarks } from "../../context/BookmarksListProvider";
+import { useBookmark } from "../../context/BookmarksListProvider";
+
+const BASE_GEOCODING_URL =
+  "https://api.bigdatacloud.net/data/reverse-geocode-client";
 
 function AddNewBookmark() {
-  const navigate = useNavigate();
-
   const [lat, lng] = useUrlLocation();
+  const navigate = useNavigate();
   const [cityName, setCityName] = useState("");
-  const [countryName, setCountryName] = useState("");
+  const [country, setCountry] = useState("");
   const [countryCode, setCountryCode] = useState("");
-  const { createBookmark } = useBookmarks();
-
-  const [isLoadingGeoLocationCoding, setIsLoadingGeoLocationCoding] =
-    useState(true);
+  const [isLoadingGeoCoding, setIsLoadingGeoCoding] = useState(false);
+  const [geoCodingError, setGeoCodingError] = useState(null);
+  const { createBookmark } = useBookmark();
 
   useEffect(() => {
     if (!lat || !lng) return;
 
     async function fetchLocationData() {
-      setIsLoadingGeoLocationCoding(true);
+      setIsLoadingGeoCoding(true);
+      setGeoCodingError(null);
       try {
         const { data } = await axios.get(
-          `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}&localityLanguage=en`
+          `${BASE_GEOCODING_URL}?latitude=${lat}&longitude=${lng}`
         );
+        if (!data.countryCode)
+          throw new Error(
+            "this location is not a city! please click somewhere else."
+          );
 
         setCityName(data.city || data.locality || "");
-        setCountryName(data.countryName);
+        setCountry(data.countryName);
         setCountryCode(data.countryCode);
-
-        setIsLoadingGeoLocationCoding(false);
       } catch (error) {
-        setIsLoadingGeoLocationCoding(false);
+        setGeoCodingError(error.message);
+      } finally {
+        setIsLoadingGeoCoding(false);
       }
     }
     fetchLocationData();
   }, [lat, lng]);
 
-  if (isLoadingGeoLocationCoding) return <p>loading...</p>;
+  if (isLoadingGeoCoding) return <p>loading...</p>;
 
-  if (!cityName || !countryName) {
+  if (!cityName || !country) {
     toast.error("invalid location");
     return <p>Please select another location.</p>;
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!countryName || !cityName) return;
+    if (!cityName || !country) return;
 
     const newBookmark = {
       cityName,
-      country: countryName,
+      country,
       countryCode,
       latitude: lat,
       longitude: lng,
-      host_location: cityName + " " + countryName,
+      host_location: cityName + " " + country,
     };
-
     await createBookmark(newBookmark);
-
     navigate("/bookmarks");
   };
 
@@ -87,8 +91,8 @@ function AddNewBookmark() {
             <input
               type="text"
               id="country"
-              onChange={(e) => setCountryName(e.target.value)}
-              value={countryName}
+              onChange={(e) => setCountry(e.target.value)}
+              value={country}
               className="mt-2 p-2 w-5/6 focus:border-none focus:outline-none"
             />
             <ReactCountryFlag

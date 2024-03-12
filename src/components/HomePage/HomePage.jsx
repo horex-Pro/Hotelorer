@@ -1,9 +1,9 @@
-import React from 'react'
-import Header from '../Header/Header';
-import NearbyLocations from '../NearbyLocations/NearbyLocations';
-import Comments from '../Comments/Comments';
-import JobOffer from '../JobOffer/JobOffer';
-import Footer from '../Footer/Footer';
+import React from "react";
+import Header from "../Header/Header";
+import NearbyLocations from "../NearbyLocations/NearbyLocations";
+import Comments from "../Comments/Comments";
+import JobOffer from "../JobOffer/JobOffer";
+import Footer from "../Footer/Footer";
 
 function HomePage() {
   return (
@@ -17,4 +17,4 @@ function HomePage() {
   );
 }
 
-export default HomePage
+export default HomePage;

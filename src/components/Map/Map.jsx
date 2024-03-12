@@ -55,7 +55,7 @@ function Map({ markerLocations }) {
         <ChangeCenter position={position} />
         {markerLocations
           ? markerLocations.map((item) => (
-              <Marker position={[item.latitude, item.longitude]}>
+              <Marker position={[item.latitude, item.longitude]} key={item.id}>
                 <Popup>{item.host_location}</Popup>
               </Marker>
             ))

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { useBookmarks } from "../../context/BookmarksListProvider";
+import { useBookmark } from "../../context/BookmarksListProvider";
 import ReactCountryFlag from "react-country-flag";
 
 function SingleBookmark() {
   const navigate = useNavigate();
   const { id } = useParams();
   const [currentBookmark, setCurrentBookmark] = useState();
-  const { isLoading, bookmarks } = useBookmarks();
+  const { isLoading, bookmarks } = useBookmark();
 
   useEffect(() => {
     if (bookmarks && id) {

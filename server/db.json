@@ -1323,17 +1323,7 @@
       ]
     }
   ],
-  "bookmarks": [
-    {
-      "cityName": "Arlit",
-      "country": "Niger (the)",
-      "countryCode": "NE",
-      "latitude": "18.01432440371545",
-      "longitude": "10.962178281928654",
-      "host_location": "Arlit Niger (the)",
-      "id": 1
-    }
-  ],
+  "bookmarks": [],
   "comments": [
     {
       "userName": "John Doe",

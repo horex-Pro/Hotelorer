@@ -12,6 +12,7 @@ function LocationsList(link) {
           <Link
             to={`/hotels/${item.id}?lat=${item.latitude}&lng=${item.longitude}`}
             className="card w-[420px] flex flex-col justify-between h-[436px]"
+            key={item.id}
           >
             <img
               className="w-full h-[290px] rounded-[20px]"

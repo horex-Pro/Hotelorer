@@ -2,10 +2,10 @@ import React from "react";
 import Footer from "../Footer/Footer";
 import { Outlet } from "react-router-dom";
 import Map from "../Map/Map";
-import { useBookmarks } from "../../context/BookmarksListProvider";
+import { useBookmark } from "../../context/BookmarksListProvider";
 
 function BookmarkLayout() {
-  const { isLoading, bookmarks } = useBookmarks();
+  const { isLoading, bookmarks } = useBookmark();
   if (isLoading) return <p>loading...</p>;
   return (
     <div>

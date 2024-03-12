@@ -1,11 +1,11 @@
 import React from "react";
-import { useBookmarks } from "../../context/BookmarksListProvider";
+import { useBookmark } from "../../context/BookmarksListProvider";
 import ReactCountryFlag from "react-country-flag";
 import { Link } from "react-router-dom";
 import { FaTrash } from "react-icons/fa";
 
 function Bookmark() {
-  const { isLoading, bookmarks, deleteBookmark } = useBookmarks();
+  const { isLoading, bookmarks, deleteBookmark } = useBookmark();
 
   const handleClick = (e, id) => {
     e.preventDefault();
