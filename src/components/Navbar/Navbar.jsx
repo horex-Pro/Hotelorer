@@ -11,10 +11,10 @@ function Navbar() {
           <li className="text-black font-light w-[30%] ">
             <ul className="flex justify-between">
               <li>
-                <Link to="/hotels">Make Reservation</Link>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="#">About Us</Link>
+                <Link to="/hotels">Hotels</Link>
               </li>
               <li>
                 <Link to="/bookmarks">Bookmarks</Link>
