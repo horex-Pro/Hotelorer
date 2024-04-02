@@ -11,7 +11,7 @@ function Button({ text, bgColor, color, border, font, path }) {
               flex
               border
               border-${border}
-              rounded-[28px] w-[80px]
+              rounded-[28px] min-w-[80px]
               items-center
               justify-center
               h-[30px]

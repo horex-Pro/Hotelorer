@@ -49,12 +49,7 @@
       "host_neighbourhood": null,
       "host_listings_count": 1,
       "host_total_listings_count": 1,
-      "host_verifications": [
-        "email",
-        "phone",
-        "facebook",
-        "reviews"
-      ],
+      "host_verifications": ["email", "phone", "facebook", "reviews"],
       "street": "Amsterdam, Noord-Holland 1054, Netherlands",
       "neighbourhood": null,
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -119,9 +114,7 @@
         "lon": 2.35,
         "lat": 48.86
       },
-      "features": [
-        "Host Has Profile Pic"
-      ]
+      "features": ["Host Has Profile Pic"]
     },
     {
       "id": "9192415",
@@ -312,11 +305,7 @@
       "host_neighbourhood": "Oud-West",
       "host_listings_count": 3,
       "host_total_listings_count": 3,
-      "host_verifications": [
-        "email",
-        "phone",
-        "reviews"
-      ],
+      "host_verifications": ["email", "phone", "reviews"],
       "street": "Oud-West, Amsterdam, North Holland 1054, Netherlands",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -385,10 +374,7 @@
         "lon": 4.875639539930118,
         "lat": 52.36456756846072
       },
-      "features": [
-        "Host Has Profile Pic",
-        "Is Location Exact"
-      ]
+      "features": ["Host Has Profile Pic", "Is Location Exact"]
     },
     {
       "id": "13153299",
@@ -709,10 +695,7 @@
       "host_neighbourhood": null,
       "host_listings_count": 1,
       "host_total_listings_count": 1,
-      "host_verifications": [
-        "email",
-        "reviews"
-      ],
+      "host_verifications": ["email", "reviews"],
       "street": "Amsterdam, North Holland, Netherlands",
       "neighbourhood": null,
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -782,9 +765,7 @@
         "lon": 4.865594943841575,
         "lat": 52.36667871194905
       },
-      "features": [
-        "Host Has Profile Pic"
-      ]
+      "features": ["Host Has Profile Pic"]
     },
     {
       "id": "13465532",
@@ -818,7 +799,7 @@
           "rgba(103, 91, 72, 1.00)"
         ],
         "height": 480,
-        "url": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/065e90eb568e7e4e34733eb9d6f3ec76"
+        "url": "https://a0.muscache.com/im/pictures/fe92d866-4365-4267-b894-0f75511a6d41.jpg?aki_policy=x_large"
       },
       "xl_picture_url": "https://a0.muscache.com/im/pictures/fe92d866-4365-4267-b894-0f75511a6d41.jpg?aki_policy=x_large",
       "host_id": "15625753",
@@ -918,137 +899,6 @@
       ]
     },
     {
-      "id": "13760586",
-      "listing_url": "https://www.airbnb.com/rooms/13760586",
-      "scrape_id": "20170402075052",
-      "last_scraped": "2017-04-02",
-      "name": "Fresh and bright in Baarsjes",
-      "summary": "Bright and comfortable apartment in a quiet street in Amsterdam-west (Baarsjes area) near city centre! You will have a spacious livingroom with big couch and great dining area. There is a nice kitchen and a clean bathroom.  The bedroom is very comfortable with big wardrobe, luxury bed and tv.",
-      "space": null,
-      "description": "2 bikes Wifi Cards for public transfer A lot of stores and restaurants around the corner",
-      "experiences_offered": "none",
-      "neighborhood_overview": "A lot of stores and restaurants around the corner",
-      "notes": null,
-      "transit": "1 minute walk to public transfer and direct line of 15 minutes to Amsterdam central, dam square and leidseplein.",
-      "access": "2 bikes Wifi Cards for public transfer",
-      "interaction": "You can contact me any time of the day for information about the house or the city!",
-      "house_rules": "-Treat the apartment and neighbours with respect. -No Smoking inside. -No parties/events/invite other people. -Low noise after 23.00 till 9.00. -Please no shoes in the house. (For neighbours and to keep it clean)",
-      "thumbnail_url": "https://a0.muscache.com/im/pictures/440cb88b-6a93-48bc-b87f-78675ea40c60.jpg?aki_policy=small",
-      "medium_url": "https://a0.muscache.com/im/pictures/440cb88b-6a93-48bc-b87f-78675ea40c60.jpg?aki_policy=medium",
-      "picture_url": {
-        "thumbnail": true,
-        "filename": "440cb88b-6a93-48bc-b87f-78675ea40c60.jpg",
-        "format": "JPEG",
-        "width": 639,
-        "mimetype": "image/jpeg",
-        "id": "089848e03bb2b3b495ad7dc8f7640af4",
-        "last_synchronized": "2019-06-01T01:28:29.036214",
-        "color_summary": [
-          "rgba(79, 80, 70, 1.00)",
-          "rgba(70, 69, 63, 1.00)",
-          "rgba(86, 79, 77, 1.00)"
-        ],
-        "height": 426,
-        "url": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/089848e03bb2b3b495ad7dc8f7640af4"
-      },
-      "xl_picture_url": "https://a0.muscache.com/im/pictures/440cb88b-6a93-48bc-b87f-78675ea40c60.jpg?aki_policy=x_large",
-      "host_id": "14694975",
-      "host_url": "https://www.airbnb.com/users/show/14694975",
-      "host_name": "Robin&Thaís",
-      "host_since": "2014-04-24",
-      "host_location": "Berlin, Germany",
-      "host_about": null,
-      "host_response_time": "within an hour",
-      "host_response_rate": 100,
-      "host_acceptance_rate": null,
-      "host_thumbnail_url": "https://a0.muscache.com/im/pictures/236faca6-834f-4dde-be40-d9d229a76250.jpg?aki_policy=profile_small",
-      "host_picture_url": "https://a0.muscache.com/im/pictures/236faca6-834f-4dde-be40-d9d229a76250.jpg?aki_policy=profile_x_medium",
-      "host_neighbourhood": null,
-      "host_listings_count": 0,
-      "host_total_listings_count": 0,
-      "host_verifications": [
-        "email",
-        "phone",
-        "reviews"
-      ],
-      "street": "Amsterdam, NH 1056, Netherlands",
-      "neighbourhood": null,
-      "neighbourhood_cleansed": "De Baarsjes - Oud-West",
-      "neighbourhood_group_cleansed": null,
-      "city": "Amsterdam",
-      "state": "NH",
-      "zipcode": "1056",
-      "market": "Amsterdam",
-      "smart_location": "Berlin, Germany",
-      "country_code": "NL",
-      "country": "Netherlands",
-      "latitude": "52.515006473317875",
-      "longitude": "13.381347656250002",
-      "property_type": "Apartment",
-      "room_type": "Entire home/apt",
-      "accommodates": 2,
-      "bathrooms": 1,
-      "bedrooms": 1,
-      "beds": 1,
-      "bed_type": "Real Bed",
-      "amenities": [
-        "TV",
-        "Internet",
-        "Wireless Internet",
-        "Kitchen",
-        "Heating",
-        "Smoke detector",
-        "Carbon monoxide detector",
-        "Essentials",
-        "Shampoo",
-        "Hangers",
-        "Hair dryer",
-        "Iron",
-        "Laptop friendly workspace",
-        "translation missing: en.hosting_amenity_49",
-        "translation missing: en.hosting_amenity_50"
-      ],
-      "square_feet": null,
-      "price": 115,
-      "weekly_price": null,
-      "monthly_price": null,
-      "security_deposit": null,
-      "cleaning_fee": 35,
-      "guests_included": 1,
-      "extra_people": 0,
-      "minimum_nights": 3,
-      "maximum_nights": 14,
-      "calendar_updated": "today",
-      "has_availability": null,
-      "availability_30": 0,
-      "availability_60": 0,
-      "availability_90": 0,
-      "availability_365": 22,
-      "calendar_last_scraped": "2017-04-02",
-      "number_of_reviews": 1,
-      "first_review": "2016-08-02",
-      "last_review": "2016-08-02",
-      "review_scores_rating": 100,
-      "review_scores_accuracy": 10,
-      "review_scores_cleanliness": 10,
-      "review_scores_checkin": 10,
-      "review_scores_communication": 10,
-      "review_scores_location": 8,
-      "review_scores_value": 8,
-      "license": null,
-      "jurisdiction_names": "Amsterdam",
-      "cancellation_policy": "strict",
-      "calculated_host_listings_count": 1,
-      "reviews_per_month": 0.12,
-      "geolocation": {
-        "lon": 4.853345068114508,
-        "lat": 52.37080138742488
-      },
-      "features": [
-        "Host Has Profile Pic"
-      ]
-    },
-    {
       "id": "7890890",
       "listing_url": "https://www.airbnb.com/rooms/7890890",
       "scrape_id": "20170402075052",
@@ -1097,12 +947,7 @@
       "host_neighbourhood": "Oud-West",
       "host_listings_count": 1,
       "host_total_listings_count": 1,
-      "host_verifications": [
-        "email",
-        "phone",
-        "reviews",
-        "jumio"
-      ],
+      "host_verifications": ["email", "phone", "reviews", "jumio"],
       "street": "Oud-West, Amsterdam, Noord-Holland 1054, Netherlands",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -1236,12 +1081,7 @@
       "host_neighbourhood": "Oud-West",
       "host_listings_count": 2,
       "host_total_listings_count": 2,
-      "host_verifications": [
-        "email",
-        "phone",
-        "reviews",
-        "jumio"
-      ],
+      "host_verifications": ["email", "phone", "reviews", "jumio"],
       "street": "Oud-West, Amsterdam, Noord-Holland 1057, Netherlands",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
