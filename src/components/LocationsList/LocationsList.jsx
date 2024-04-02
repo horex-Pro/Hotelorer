@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function LocationsList(link) {
   const { loading, data } = useFetch("http://localhost:5000/hotels", "");
   return (
-    <div className="flex pt-10 flex-wrap gap-14">
+    <div className="flex pt-10 flex-wrap gap-14 justify-center">
       {data ? (
         data.map((item) => (
           <Link

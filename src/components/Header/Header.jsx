@@ -33,6 +33,7 @@ function Header() {
     children: 0,
     room: 1,
   });
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // add a refrence to open/close filter's dropdown
   const optionRef = useRef();
@@ -67,7 +68,7 @@ function Header() {
   return (
     <header>
       <div className="hero">
-        <Navbar />
+        <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
         <QuestionBox />
         <div className="wrapper p-[20px]">
           <div
