@@ -72,7 +72,7 @@ function Header() {
         <QuestionBox />
         <div className="wrapper p-[20px]">
           <div
-            className={`main-box h-[720px] rounded-[50px] p-2 flex flex-col items-center  text-white  text-center`}
+            className={`main-box h-[720px] rounded-[50px] p-2 flex flex-col items-center  text-white  text-center max-lg:h-auto`}
             style={headerBackground}
           >
             <h1 className="font-semibold text-[67px]">
@@ -132,9 +132,9 @@ function Filters({
   handleSearch,
 }) {
   return (
-    <div className="filter-box w-[80%] bg-white min-h-[300px] rounded-[25px] mt-2 flex-wrap p-2">
-      <div className="filter flex items-center h-[80%] justify-around flex-wrap">
-        <div className="option w-[300px] h-[125px] flex flex-col justify-around text-left">
+    <div className="filter-box w-[80%] bg-white min-h-[300px] rounded-[25px] mt-2 flex-wrap p-2 ">
+      <div className="filter flex items-center h-[80%] justify-between flex-wrap p-5 max-lg:h-auto max-lg:flex-col max-lg:gap-2">
+        <div className="option w-[300px] h-[125px] flex flex-col justify-around text-left max-lg:flex-col">
           <label className="text-black text-[28px]">Locations:</label>
           <div className="search-box w-[290px] h-[60px] rounded-[18px] shadow-xl flex items-center p-3">
             <LocationIcon />

@@ -6,19 +6,19 @@ import { Link } from "react-router-dom";
 function LocationsList(link) {
   const { loading, data } = useFetch("http://localhost:5000/hotels", "");
   return (
-    <div className="flex pt-10 flex-wrap gap-14 justify-center">
+    <div className="flex pt-10 flex-wrap gap-14 justify-center max-sm:flex-col max-sm:items-center">
       {data ? (
         data.map((item) => (
           <Link
             to={`/hotels/${item.id}?lat=${item.latitude}&lng=${item.longitude}`}
-            className="card w-[420px] flex flex-col justify-between h-[436px]"
+            className="card w-[420px] flex flex-col justify-between h-[436px] max-lg:w-2/5 max-sm:w-auto"
             key={item.id}
           >
             <img
               className="w-full h-[290px] rounded-[20px]"
               src={item.picture_url.url}
             />
-            <h3 className="font-semibold text-[26px] text-justify">
+            <h3 className="font-semibold text-[26px] text-justify max-lg:text-[20px] max-lg:text-start">
               {item.name}
             </h3>
             <p className="card-description text-blue text-[20px] h-[35px] font-light text-ellipsis overflow-hidden">
