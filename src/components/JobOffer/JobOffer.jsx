@@ -3,13 +3,14 @@ import Button from "../Button/Button";
 
 function JobOffer() {
   return (
-    <div className="w-full bg-blue h-[240px] flex justify-evenly items-center text-white pl-[5%] pr-[20px] overflow-hidden">
+    <div className="w-full bg-blue h-[240px] flex justify-evenly items-center text-white pl-[5%] pr-[20px] overflow-hidden max-lg:flex-col max-lg:h-auto max-lg:p-9 max-lg:justify-between max-lg:items-center max-lg:gap-5">
       <svg
         width="286"
         height="245"
         viewBox="0 0 286 245"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        className="hidden"
       >
         <path
           fill-rule="evenodd"
@@ -18,8 +19,8 @@ function JobOffer() {
           fill="white"
         />
       </svg>
-      <div className="text-box">
-        <h4 className=" font-medium text-[30px]">
+      <div className="text-box max-lg:flex flex-col items-center">
+        <h4 className=" font-medium text-[30px] max-lg:text-center">
           If you can save time and money, why not?
         </h4>
         <p>Come on, register and we will send the best promo for you</p>

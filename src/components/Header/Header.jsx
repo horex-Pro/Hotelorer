@@ -70,12 +70,12 @@ function Header() {
       <div className="hero">
         <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
         <QuestionBox />
-        <div className="wrapper p-[20px]">
+        <div className="wrapper p-[20px] max-sm:p-1">
           <div
-            className={`main-box h-[720px] rounded-[50px] p-2 flex flex-col items-center  text-white  text-center max-lg:h-auto`}
+            className={`main-box h-[720px] rounded-[50px] p-2 flex flex-col items-center  text-white  text-center max-lg:h-auto max-lg:rounded-[30px]`}
             style={headerBackground}
           >
-            <h1 className="font-semibold text-[67px]">
+            <h1 className="font-semibold text-[67px] max-lg:text-[8vw]">
               Find your favorite <br />
               place here!
             </h1>
@@ -108,9 +108,9 @@ export default Header;
 function QuestionBox() {
   return (
     <div>
-      <div className="question-box w-full bg-[#E6E6E6] flex items-center justify-center h-[60px] text-blue font-medium">
+      <div className="question-box w-full bg-[#E6E6E6] flex items-center justify-center h-[60px] text-blue font-medium max-sm:p-2">
         <StarIcon />
-        <p className="ml-2 mr-3">Would you like tell you best offers?</p>
+        <p className="ml-2 mr-3 max-sm:text-[14px]">Would you like tell you best offers?</p>
         <Button font="light" text="Tell me" bgColor="blue" color="white" />
       </div>
     </div>
@@ -132,11 +132,11 @@ function Filters({
   handleSearch,
 }) {
   return (
-    <div className="filter-box w-[80%] bg-white min-h-[300px] rounded-[25px] mt-2 flex-wrap p-2 ">
-      <div className="filter flex items-center h-[80%] justify-between flex-wrap p-5 max-lg:h-auto max-lg:flex-col max-lg:gap-2">
-        <div className="option w-[300px] h-[125px] flex flex-col justify-around text-left max-lg:flex-col">
+    <div className="filter-box w-[80%] bg-white min-h-[300px] rounded-[25px] mt-2 flex-wrap p-2 max-lg:w-full max-sm:items-center max-sm:w-full max-sm:p-0">
+      <div className="filter flex items-center h-[80%] justify-between flex-wrap p-5 max-lg:h-auto max-sm:flex-col max-lg:gap-2 max-lg:items-center">
+        <div className="option w-[300px] h-[125px] flex flex-col justify-around text-left max-lg:flex-col max-lg:items-center">
           <label className="text-black text-[28px]">Locations:</label>
-          <div className="search-box w-[290px] h-[60px] rounded-[18px] shadow-xl flex items-center p-3">
+          <div className="search-box w-[290px] h-[60px] rounded-[18px] shadow-xl flex items-center p-3 max-lg:w-auto">
             <LocationIcon />
             <input
               type="text"
@@ -147,9 +147,9 @@ function Filters({
             />
           </div>
         </div>
-        <div className="option w-[300px] h-[125px] flex flex-col justify-around text-left relative">
+        <div className="option w-[300px] h-[125px] flex flex-col justify-around text-left relative max-lg:flex-col max-lg:items-center">
           <label className="text-black text-[28px]">Check in/out:</label>
-          <div className="search-box w-[290px] h-[60px] rounded-[18px] shadow-xl flex items-center p-3">
+          <div className="search-box w-[290px] h-[60px] rounded-[18px] shadow-xl flex items-center p-3 max-lg:w-auto">
             <CheckIcon />
             <div
               className="bg-none w-full p-2 focus:border-none focus:outline-none text-blue font-light"
@@ -173,9 +173,9 @@ function Filters({
             />
           ) : null}
         </div>
-        <div className="option w-[300px] h-[125px] flex flex-col justify-around text-left relative">
+        <div className="option w-[300px] h-[125px] flex flex-col justify-around text-left relative max-lg:flex-col max-lg:items-center">
           <label className="text-black text-[28px]">Members:</label>
-          <div className="search-box w-[290px] h-[60px] rounded-[18px] shadow-xl flex items-center p-3">
+          <div className="search-box w-[290px] h-[60px] rounded-[18px] shadow-xl flex items-center p-3 max-lg:w-auto">
             <User />
             <div
               className="bg-none w-full p-2 focus:border-none focus:outline-none text-blue font-light"

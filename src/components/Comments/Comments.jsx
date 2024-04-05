@@ -25,7 +25,7 @@ function Comments() {
         className="mySwiper mt-4"
         breakpoints={{
           0: { slidesPerView: 1 }, // 1 card per page on mobile
-          768: { slidesPerView: 3 }, // 3 cards per page on larger screens
+          1023: { slidesPerView: 3 }, // 3 cards per page on larger screens
         }}
       >
         {data ? (
