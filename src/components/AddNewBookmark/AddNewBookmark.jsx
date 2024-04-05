@@ -39,6 +39,10 @@ function AddNewBookmark() {
         setCountryCode(data.countryCode);
       } catch (error) {
         setGeoCodingError(error.message);
+        toast.error("invalid location");
+        setCityName("");
+        setCountry("");
+        setCountryCode("");
       } finally {
         setIsLoadingGeoCoding(false);
       }
@@ -49,7 +53,6 @@ function AddNewBookmark() {
   if (isLoadingGeoCoding) return <p>loading...</p>;
 
   if (!cityName || !country) {
-    toast.error("invalid location");
     return <p>Please select another location.</p>;
   }
 

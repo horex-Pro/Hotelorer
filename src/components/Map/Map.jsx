@@ -34,7 +34,10 @@ function Map({ markerLocations }) {
   }, [lat, lng]);
 
   return (
-    <div className="map w-1/2 h-screen bg-black relative z-0" id="map">
+    <div
+      className="map w-1/2 h-screen bg-black relative z-0 max-lg:w-[95%]"
+      id="map"
+    >
       <button
         onClick={getLocations}
         className=" absolute w-[150px] h-[40px] bg-blue text-white rounded-full z-50 left-5 bottom-28"

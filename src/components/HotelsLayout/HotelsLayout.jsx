@@ -14,8 +14,8 @@ function HotelsLayout() {
       <h2 className=" text-[40px] font-medium p-5">
         Your<span className="text-blue"> Suitable </span>locations: {}
       </h2>
-      <div className="layout p-[20px] flex flex-wrap">
-        <div className="hotels-container w-1/2">
+      <div className="layout p-[20px] flex  items-center flex-wrap max-lg:flex-col max-lg:p-2">
+        <div className="hotels-container w-1/2 max-lg:w-full">
           <Outlet />
         </div>
         {data ? <Map markerLocations={data} /> : null}
