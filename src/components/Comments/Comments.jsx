@@ -15,7 +15,7 @@ function Comments() {
         What you say about<span className="text-blue"> Hotelorer:</span>
       </h2>
       <Swiper
-        slidesPerView={3}
+        // slidesPerView={3}
         spaceBetween={30}
         centeredSlides={false}
         pagination={{
@@ -23,11 +23,18 @@ function Comments() {
         }}
         modules={[Pagination]}
         className="mySwiper mt-4"
+        breakpoints={{
+          0: { slidesPerView: 1 }, // 1 card per page on mobile
+          768: { slidesPerView: 3 }, // 3 cards per page on larger screens
+        }}
       >
         {data ? (
           data.map((item) => (
-            <SwiperSlide key={item.id}>
-              <div className="comment max-w-[400px] h-[440px] rounded-[20px] border border-blue p-10 pt-28 flex flex-col justify-between">
+            <SwiperSlide
+              key={item.id}
+              className="flex items-center justify-center"
+            >
+              <div className="comment max-w-[400px] h-[440px] rounded-[20px] border border-blue p-10 pt-28 flex flex-col justify-between max-lg:w-full">
                 <p className="body text-[30px] font-light text-justify">
                   {item.body}
                 </p>
