@@ -11,7 +11,11 @@ function SingleHotelData() {
   if (data)
     return (
       <div className="w-full p-2 pt-0">
-        <img className="rounded-3xl" src={data.picture_url.url} alt="" />
+        <img
+          className="rounded-3xl max-lg:w-full"
+          src={data.picture_url.url}
+          alt=""
+        />
         <h1 className="font-bold text-xl">{data.name}</h1>
         <p className="text-justify font-thin">{data.summary}</p>
         <div className="price text-blue">

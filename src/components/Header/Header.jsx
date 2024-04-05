@@ -110,7 +110,9 @@ function QuestionBox() {
     <div>
       <div className="question-box w-full bg-[#E6E6E6] flex items-center justify-center h-[60px] text-blue font-medium max-sm:p-2">
         <StarIcon />
-        <p className="ml-2 mr-3 max-sm:text-[14px]">Would you like tell you best offers?</p>
+        <p className="ml-2 mr-3 max-sm:text-[14px]">
+          Would you like tell you best offers?
+        </p>
         <Button font="light" text="Tell me" bgColor="blue" color="white" />
       </div>
     </div>

@@ -58,7 +58,7 @@ function Footer() {
           </a>
         </div>
       </div>
-      <br className=" max-lg:hidden"/>
+      <br className=" max-lg:hidden" />
       <div className="line w-full bg-[#ffffff3c] h-[1px]"></div>
       <p className=" max-lg:text-center">
         * Some hotels require you to cancel more than 24 hours before check-in.
