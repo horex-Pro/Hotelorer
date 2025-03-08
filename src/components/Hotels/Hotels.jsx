@@ -22,7 +22,7 @@ export default function Hotels() {
           >
             <img
               className="h-[100px] rounded-3xl w-1/4 max-lg:w-full max-lg:h-auto"
-              src={item.picture_url.url}
+              src={item.thumbnail_url.url}
               alt=""
             />
             <div className="description h-full flex flex-col justify-between w-3/4 max-lg:w-full max-sm:w-full'">
